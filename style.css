@@ -1,0 +1,37 @@
+h1.site_heading{
+	text-align: center;
+	font-size: 130px;
+}
+
+div.main_content{
+	text-align: center;
+}
+
+form{
+	text-align: center;
+}
+
+input[type=text]{
+	border-radius: 5px;
+	width: 450px;
+	height: 50px;
+	padding: 9px;
+	border: 1px solid #ccc;
+	font-size: 21px;
+}
+
+input[type=button]{
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	border-radius: 8px;
+	background-color: #007bff;
+	cursor: pointer;
+	margin: 0px;
+	color: white;
+	border: 1.5px solid white;
+}
+
+input[type=button]:hover{
+	background-color: #0033ff;
+}
