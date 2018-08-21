@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Live Sub Counter</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Live Sub Counter">
+		<meta name="keywords" content="youtube,subscriber,live,live-subscriber">
+		<meta name="author" content="Ganofins">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<style href="style.css"></style>
+	</head>
+	<body>
+		<h1 class="site_heading">Live Sub Counter</h1>
+		<form class="form-inline">
+			<input type="text" class="form-control mb-2 mr-sm-2" id="channel_id" placeholder="Enter a Channel's ID">
+			<input type="button" class="btn btn-primary mb-2" onclick="result()" value="Count">
+		</form>
+		<p id="demo"></p>
+		
+		<script>
+			function result(){
+				var channel_name = "";
+				var sub_count = "";
+				var channel_id = document.getElementById("channel_id").value;
+				var xhttp = new XMLHttpRequest();
+				
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var output = this.responseText;
+						output = JSON.parse(output);
+						channel_name = output.items[0].snippet["title"];
+						sub_count = output.items[0].statistics["subscriberCount"];
+						document.getElementById("demo").innerHTML = channel_name+sub_count;
+					}
+				};
+				xhttp.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id="+channel_id+"&key=AIzaSyCBgy9GTrM6PCPAgYwnX_vqZpjiVa5TtC8", true);
+				xhttp.send();
+				setTimeout(result,1000);
+			}
+		</script>
+	</body>
+</html>
