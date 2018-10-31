@@ -35,3 +35,16 @@ input[type=button]{
 input[type=button]:hover{
 	background-color: #0033ff;
 }
+
+#channel_name{
+	font-size: 40px;
+	font-weight: bold;
+}
+
+#sub_count{
+	font-size: 60px;
+	background-color: black;
+	color: white;
+	border-radius: 20px;
+	padding: 5px 10px;
+}
