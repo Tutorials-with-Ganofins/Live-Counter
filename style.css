@@ -1,3 +1,7 @@
+body{
+	background-color: #e0d5d5;
+}
+
 h1.site_heading{
 	text-align: center;
 	font-size: 130px;
@@ -42,6 +46,8 @@ input[type=button]:hover{
 }
 
 #sub_count{
+	margin-top: 5px;
+	display: none;
 	font-size: 60px;
 	background-color: black;
 	color: white;

@@ -1,9 +1,16 @@
 function result(){
+	
+	var channel_id = document.getElementById("channel_id").value;
+	if (channel_id === "")
+	{
+		return alert("Please enter the Channel ID");
+	}
+	document.getElementById("sub_count").style.display = "inline";
 	var channel_name = "";
 	var sub_count = "";
-	var channel_id = document.getElementById("channel_id").value;
 	var xhttp = new XMLHttpRequest();
-				
+	
+	//for the request			
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 				var output = this.responseText;
