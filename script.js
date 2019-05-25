@@ -25,7 +25,7 @@ function request(channel_id)
 		}
 		else if(this.readyState == 4)
 		{
-			return console.log(JSON.parse(this.responseText)["error"]["message"])
+			return console.log(JSON.parse(this.responseText)["error"]["message"]);
 		}
 	};
 	xhttp.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id="+channel_id+"&key=AIzaSyCBgy9GTrM6PCPAgYwnX_vqZpjiVa5TtC8", true);
