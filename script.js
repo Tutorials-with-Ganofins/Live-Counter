@@ -28,7 +28,7 @@ function request_data(channel_id)
 			return console.log(JSON.parse(this.responseText)["error"]["message"]);
 		}
 	};
-	xhttp.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id="+channel_id+"&key=AIzaSyDC4fqJ2fr-TWbOedrO9bLN97B45dkcKoc", true);
+	xhttp.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id="+channel_id+"&key=AIzaSyBjEKv8VoPsiuia-yUm2SGioen9ZWMeokE", true);
 	xhttp.send();
 	setTimeout(request_data(), 2000);
 }
