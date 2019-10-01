@@ -2,15 +2,15 @@ function result(channel_id)
 {
 	if (channel_id === "")
 	{
-		return alert("Please enter the Channel ID");
+		return alert("Please enter a Channel ID");
 	}
 	document.getElementById("channel_id").value = "";
 	
 	//for the request
-	request(channel_id);
+	request_data(channel_id);
 }
 
-function request(channel_id)
+function request_data(channel_id)
 {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function()
@@ -28,7 +28,9 @@ function request(channel_id)
 			return console.log(JSON.parse(this.responseText)["error"]["message"]);
 		}
 	};
-	xhttp.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id="+channel_id+"&key=AIzaSyCBgy9GTrM6PCPAgYwnX_vqZpjiVa5TtC8", true);
+	xhttp.open("GET", "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id="+channel_id+"&key=AIzaSyDC4fqJ2fr-TWbOedrO9bLN97B45dkcKoc", true);
 	xhttp.send();
-	setTimeout(request(), 1000);
+	setTimeout(request_data(), 2000);
 }
+
+
